@@ -1,66 +1,46 @@
-/* Эффекты страницы. Работают только если:
-   - пользователь не включил prefers-reduced-motion;
-   - GSAP и ScrollTrigger загрузились с CDN.
-   Иначе страница остаётся статичной и полностью читаемой. */
+/* Альбом работ: прокрутка страницы внутри листа и прочерчивание размерных линий.
+   При prefers-reduced-motion линии стоят сразу, страница не прокручивается. */
 (function () {
-  var root = document.documentElement;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (reduce.matches || !window.gsap || !window.ScrollTrigger) {
-    root.classList.remove('motion-ok');
-    return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 1. Длина пути для каждой прочерчиваемой линии
+  document.querySelectorAll('.draw').forEach(function (p) {
+    try { p.style.setProperty('--len', Math.ceil(p.getTotalLength()) + 1); } catch (e) {}
+  });
+
+  if (!reduce && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-motion');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-drawn'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.35 });
+    document.querySelectorAll('.title-view, .stages').forEach(function (el) { io.observe(el); });
   }
-  gsap.registerPlugin(ScrollTrigger);
-  root.classList.add('fx');
 
-  var mm = gsap.matchMedia();
-
-  /* 1. Параллакс первого экрана: у каждого слоя своя скорость (data-speed = yPercent) */
-  mm.add('(prefers-reduced-motion: no-preference)', function () {
-    gsap.utils.toArray('.hero .layer').forEach(function (layer) {
-      if (getComputedStyle(layer).display === 'none') return; // на телефоне скрытые слои не анимируем
-      gsap.to(layer, {
-        yPercent: parseFloat(layer.dataset.speed) || 0,
-        ease: 'none',
-        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-      });
+  // 2. Сколько прокручивать скриншот страницы внутри рамки
+  function measure() {
+    document.querySelectorAll('.case-view').forEach(function (view) {
+      var page = view.querySelector('.case-page');
+      if (!page || !page.complete || !page.naturalHeight) return;
+      var frameH = view.clientHeight;
+      var pageH = view.clientWidth * page.naturalHeight / page.naturalWidth;
+      var shift = Math.max(0, pageH - frameH);
+      view.style.setProperty('--shift', (-shift) + 'px');
+      view.style.setProperty('--dur', Math.min(14, Math.max(4, shift / 260)).toFixed(1) + 's');
     });
-
-    /* 2. Плавное появление секции с услугами (один раз) */
-    gsap.utils.toArray('#services .reveal').forEach(function (el, i) {
-      gsap.from(el, {
-        y: 40, autoAlpha: 0, duration: 0.9, delay: i * 0.08, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 85%', once: true }
-      });
-    });
+  }
+  document.querySelectorAll('.case-page').forEach(function (img) {
+    if (img.complete) measure(); else img.addEventListener('load', measure, { once: true });
   });
-
-  /* 3. «Камера влетает в картинку» */
-  mm.add({
-    desktop: '(min-width: 601px) and (prefers-reduced-motion: no-preference)',
-    phone: '(max-width: 600px) and (prefers-reduced-motion: no-preference)'
-  }, function (ctx) {
-    var phone = ctx.conditions.phone;
-    var startScale = phone ? 0.55 : 0.3;
-    var radius = 22 / startScale; // скругление в масштабе карточки ~22px
-
-    gsap.set('.fly-card', { scale: startScale, borderRadius: radius });
-    gsap.set('.fly-caption', { autoAlpha: 0, yPercent: 100 });
-
-    var tl = gsap.timeline({
-      defaults: { ease: 'none' },
-      scrollTrigger: {
-        trigger: '.fly', start: 'top top', end: '+=180%',
-        pin: true, scrub: 0.6, anticipatePin: 1
-      }
-    });
-    tl.to('.fly-card', { scale: 1, borderRadius: 0, duration: 1 }, 0)
-      .to('.fly-left', phone ? { yPercent: -160, autoAlpha: 0, duration: 0.7 } : { xPercent: -140, autoAlpha: 0, duration: 0.7 }, 0)
-      .to('.fly-right', phone ? { yPercent: 160, autoAlpha: 0, duration: 0.7 } : { xPercent: 140, autoAlpha: 0, duration: 0.7 }, 0)
-      .to('.fly-caption', { autoAlpha: 1, yPercent: 0, duration: 0.3, ease: 'power2.out' }, 1.05)
-      .to({}, { duration: 0.25 });
-  });
-
-  /* Если пользователь включит reduced motion во время просмотра — перезагружаем в статичный режим */
-  reduce.addEventListener && reduce.addEventListener('change', function () { location.reload(); });
-  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+  // скриншоты грузятся лениво: подгружаем их, когда лист рядом
+  if ('IntersectionObserver' in window) {
+    var lazy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { var img = en.target.querySelector('.case-page'); if (img) img.loading = 'eager'; lazy.unobserve(en.target); }
+      });
+    }, { rootMargin: '400px' });
+    document.querySelectorAll('.case-view').forEach(function (v) { lazy.observe(v); });
+  }
+  var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(measure, 150); });
 })();

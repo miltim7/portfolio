@@ -1,328 +1,335 @@
 <!doctype html>
-<html lang="ru" data-type="service">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Тимур — сайты и лендинги для малого бизнеса</title>
-<meta name="description" content="Сайты и лендинги под ключ, рилсы и визуал для барбершопов, салонов красоты и автосервисов. Лендинг от $60, сайт под ключ от $150.">
-<meta name="page-type" content="service">
-<meta name="site-kind" content="other">
-<meta name="theme-color" content="#cbe4f2">
+<title>Тимур Сикачевский — сайты, сервисы и приложения под ключ</title>
+<meta name="description" content="Разрабатываю сайты, веб-сервисы и мобильные приложения под ключ: от задачи и дизайна в Figma до кода и запуска. 39 работ в портфолио, рейтинг 4,9 на фриланс-бирже.">
+<meta name="theme-color" content="#f6f6f2">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Тимур — сайты и лендинги для малого бизнеса">
-<meta property="og:description" content="Сайты, рилсы и визуал для барбершопов, салонов красоты и автосервисов.">
-<meta property="og:image" content="assets/img/share.png">
+<meta property="og:title" content="Тимур Сикачевский — сайты, сервисы и приложения под ключ">
+<meta property="og:description" content="От задачи и дизайна до кода и запуска. 39 работ в портфолио.">
+<meta property="og:image" content="work/deviny.webp">
 <meta property="og:locale" content="ru_RU">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2310212c'/%3E%3Cpath d='M9 10h14M16 10v13' stroke='%23cbe4f2' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;subset=cyrillic&amp;display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1.5' y='1.5' width='29' height='29' fill='%23f6f6f2' stroke='%23141414' stroke-width='2'/%3E%3Cpath d='M9 10h14M16 10v13' stroke='%23c42a1e' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/osifont.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
-<script>
-  /* Эффекты включаются только при обычном режиме движения; иначе страница статична. */
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion-ok', 'm-enter');
-</script>
 </head>
 <body>
-<!--
-  Тема: фрилансер — сайты, рилсы, визуал для малого бизнеса (kind: service).
-  Палитра: sky-sand (bg #cbe4f2, ink #0a0a0a, accent #b0298f) + тёмный #10212c для полос.
-  Шрифт: Manrope (есть кириллица; выданные skill-ом пары без кириллицы).
-  Эффекты по запросу пользователя: 1) многослойный параллакс в hero, 2) «камера влетает» в демо.
--->
-<header class="site-header">
-  <div class="wrap header-row">
-    <a class="skip" href="#main">Перейти к содержанию</a>
-    <a class="logo" href="#top" aria-label="Тимур, на главную">
-      <span class="logo-mark" aria-hidden="true">Т</span><span>Тимур</span>
-    </a>
-    <nav class="nav" aria-label="Разделы">
-      <a href="#services">Услуги</a>
-      <a href="#demo">Демо</a>
-      <a href="#process">Как работаем</a>
-      <a href="#contact">Контакты</a>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="top">
+  <div class="top-row">
+    <a class="top-name" href="#sheet-1">Т. Сикачевский<span> · альбом работ</span></a>
+    <nav class="top-nav" aria-label="Листы альбома">
+      <a href="#sheet-2"><span class="n">2</span>Работы</a>
+      <a href="#sheet-3"><span class="n">3</span>Услуги</a>
+      <a href="#sheet-4"><span class="n">4</span>Отзывы</a>
+      <a href="#sheet-5"><span class="n">5</span>Порядок</a>
+      <a href="#sheet-6"><span class="n">6</span>Контакты</a>
     </nav>
-    <a class="btn btn-primary btn-sm" href="https://t.me/miltim7" target="_blank" rel="noopener">Обсудить проект</a>
+    <a class="btn btn-red btn-sm" href="https://t.me/miltim7" target="_blank" rel="noopener">Обсудить проект</a>
   </div>
 </header>
 
-<main id="main">
+<main id="main" class="album">
 
-<!-- 1. Первый экран: 7 слоёв параллакса (на телефоне 3: L1, L4, L7) -->
-<section class="hero" id="top" aria-labelledby="hero-title" data-enter>
-  <div class="hero-stage" aria-hidden="true">
-    <!-- L1 дальний фон: небо и солнце -->
-    <svg class="layer l1" data-speed="-10" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#cbe4f2"/>
-          <stop offset=".62" stop-color="#e4e3ef"/>
-          <stop offset="1" stop-color="#f1dce9"/>
-        </linearGradient>
-      </defs>
-      <rect x="0" y="-300" width="1440" height="1500" fill="url(#sky)"/>
-      <circle cx="1080" cy="330" r="168" fill="#b0298f" opacity=".16"/>
-      <circle cx="1080" cy="330" r="232" fill="none" stroke="#b0298f" stroke-opacity=".14" stroke-width="2"/>
-      <circle cx="1080" cy="330" r="300" fill="none" stroke="#b0298f" stroke-opacity=".08" stroke-width="2"/>
-    </svg>
-    <!-- L2 дымка -->
-    <svg class="layer l2" data-speed="-16" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
-      <ellipse cx="300" cy="540" rx="520" ry="70" fill="#fff" opacity=".45"/>
-      <ellipse cx="1150" cy="590" rx="460" ry="60" fill="#fff" opacity=".4"/>
-    </svg>
-    <!-- L3 дальний город -->
-    <svg class="layer l3" data-speed="-24" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
-      <g fill="#93b9d1" opacity=".75">
-        <path d="M0 600h70v-90h46v60h60v-120h28v-40h20v40h28v160h70v-70h80v-140l40-30 40 30v210h60v-90h90v110h70v-210h30v-30h50v30h30v240h80v-150h60v-60h20v60h60v190h70v-100h90v-150l50-40 50 40v200h60v-80h80v120h100v300H0z"/>
-      </g>
-    </svg>
-    <!-- L4 средние формы: крыши, купол -->
-    <svg class="layer l4" data-speed="-34" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
-      <g fill="#6a96b3">
-        <path d="M-20 700l110-80 110 80v40h40v-70h120v-40l70-50 70 50v100h60l90-70 90 70v-30h90v-60c0-60 110-60 110 0v90h80l120-90 120 90h40v-50h100v-40l60-40 60 40v120h90v600H-20z"/>
-      </g>
-      <g fill="#cbe4f2" opacity=".55">
-        <rect x="330" y="700" width="22" height="34" rx="3"/><rect x="372" y="700" width="22" height="34" rx="3"/>
-        <rect x="900" y="720" width="22" height="34" rx="3"/><rect x="1200" y="690" width="22" height="34" rx="3"/>
-      </g>
-    </svg>
-    <!-- L5 ближние формы: расчёска, ножницы, гаечный ключ (геометрия) -->
-    <svg class="layer l5" data-speed="-45" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
-      <g fill="#2a5068">
-        <g transform="translate(1060 662) rotate(-8)">
-          <rect x="0" y="0" width="320" height="44" rx="12"/>
-          <path d="M16 44h10v64H16zM42 44h10v64H42zM68 44h10v64H68zM94 44h10v64H94zM120 44h10v64h-10zM146 44h10v64h-10zM172 44h10v64h-10zM198 44h10v64h-10zM224 44h10v64h-10zM250 44h10v64h-10zM276 44h10v64h-10zM300 44h10v64h-10z"/>
-        </g>
-        <g transform="translate(1120 470) rotate(28)">
-          <circle cx="0" cy="0" r="40" fill="none" stroke="#2a5068" stroke-width="18"/>
-          <circle cx="0" cy="116" r="40" fill="none" stroke="#2a5068" stroke-width="18"/>
-          <path d="M36 28L290 98l-6 16L30 48zM36 90L290 20l6 16L42 110z"/>
-        </g>
-      </g>
-    </svg>
-
-    <!-- L6 дымка спереди -->
-    <svg class="layer l6" data-speed="-40" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
-      <defs>
-        <linearGradient id="haze2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-          <stop offset="1" stop-color="#fff" stop-opacity=".45"/>
-        </linearGradient>
-      </defs>
-      <rect x="0" y="560" width="1440" height="140" fill="url(#haze2)"/>
-    </svg>
-  </div>
-
-  <!-- Заголовок стоит между слоями L6 и L7 (вне aria-hidden) -->
-  <div class="hero-title-layer">
-    <div class="wrap">
-      <p class="eyebrow">Тимур · фрилансер из Азербайджана</p>
-      <h1 id="hero-title" class="h1">Сайты и лендинги для малого бизнеса</h1>
-    </div>
-  </div>
-
-
-  <!-- L7 передний план: перекрывает низ заголовка; на нём текст и кнопка -->
-  <div class="layer l7" data-speed="-48">
-    <svg class="l7-shape" aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
-      <path fill="#10212c" d="M0 740l90-40 70 30h80l60-50 60 50h120v-36h90l46-26 46 26v46h110l84-60 84 60h90v-50h70l58-30 58 30v50h90l74-46 70 46v1400H0z"/>
-      <path fill="#b0298f" d="M0 772h1440v3H0z" opacity=".6"/>
-    </svg>
-    <div class="wrap hero-copy">
-      <p class="hero-sub">Делаю сайты под ключ, рилсы и визуал для барбершопов, салонов красоты и автосервисов. Лендинг от <span data-assumed>$60</span>, готов за 2–4 дня.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://t.me/miltim7" target="_blank" rel="noopener">Обсудить проект</a>
-        <a class="btn btn-ghost" href="#demo-fly">Смотреть демо</a>
+<!-- ЛИСТ 1. Титульный -->
+<section class="sheet sheet-title" id="sheet-1" aria-labelledby="title">
+  <div class="title-grid">
+    <div class="title-copy">
+      <h1 id="title" class="gost display">Сайты, сервисы и&nbsp;приложения под&nbsp;ключ</h1>
+      <p class="lead">Я Тимур Сикачевский. Веду проект сам: разбираю задачу, рисую дизайн в&nbsp;Figma, пишу код, тестирую и&nbsp;запускаю. В&nbsp;разработке больше 5&nbsp;лет.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="https://t.me/miltim7" target="_blank" rel="noopener">Обсудить проект</a>
+        <a class="link-ink" href="#sheet-2">Смотреть работы
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- 2. Услуги -->
-<section class="section dark" id="services" aria-labelledby="services-title">
-  <div class="wrap">
-    <div class="reveal">
-      <h2 id="services-title" class="h2">Услуги и цены</h2>
-      <p class="lead">Главное направление: сайты. Сейчас работаю с барбершопами и салонами красоты, следующими будут автосервисы.</p>
-    </div>
-    <ul class="cards reveal" role="list">
-      <li class="card">
-        <svg class="card-ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="10" width="52" height="40" rx="6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M6 20h52" stroke="currentColor" stroke-width="3"/><rect x="14" y="27" width="20" height="5" rx="2" fill="#e57ac6"/><rect x="14" y="36" width="30" height="4" rx="2" fill="currentColor" opacity=".5"/></svg>
-        <h3 class="h3">Лендинг</h3>
-        <p>Одна страница: услуги, цены, адрес и кнопка записи.</p>
-        <p class="price"><span data-assumed>от $60</span> · 2–4 дня</p>
-      </li>
-      <li class="card">
-        <svg class="card-ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="8" width="38" height="30" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><rect x="22" y="26" width="38" height="30" rx="5" fill="#10212c" stroke="currentColor" stroke-width="3"/><rect x="29" y="34" width="16" height="4" rx="2" fill="#e57ac6"/><rect x="29" y="43" width="24" height="4" rx="2" fill="currentColor" opacity=".5"/></svg>
-        <h3 class="h3">Сайт под ключ</h3>
-        <p>Несколько страниц, домен, запуск и короткая инструкция, как менять тексты.</p>
-        <p class="price"><span data-assumed>от $150</span> · 5–10 дней</p>
-      </li>
-      <li class="card">
-        <svg class="card-ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="4" width="28" height="56" rx="6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M28 24v16l13-8z" fill="#e57ac6"/></svg>
-        <h3 class="h3">Рилсы и видео</h3>
-        <p>Короткие вертикальные ролики о работе мастеров и услугах.</p>
-        <p class="price"><span data-assumed>от $25</span> за ролик</p>
-      </li>
-      <li class="card">
-        <svg class="card-ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="6" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="26" r="7" fill="#e57ac6"/><path d="M10 50l16-14 10 8 10-10 10 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
-        <h3 class="h3">Дизайн и визуал</h3>
-        <p>Посты, обложки, прайс-листы. Часть визуала делаю с помощью ИИ.</p>
-        <p class="price"><span data-assumed>от $5</span> за макет</p>
-      </li>
-    </ul>
-    <p class="note reveal">Цены предварительные. Точную сумму и срок называю после брифа.</p>
-  </div>
-</section>
-
-<!-- 3. «Камера влетает в картинку»: демо-лендинг барбершопа -->
-<section class="fly-outer" id="demo-fly" aria-labelledby="fly-title">
- <div class="fly">
-  <div class="fly-stage">
-    <h2 id="fly-title" class="fly-title">
-      <span class="fly-word fly-left">Демо-сайт</span>
-      <span class="fly-word fly-right">барбершопа</span>
-    </h2>
-    <div class="fly-card">
-      <!-- Макет нарисован кодом. Когда появится настоящий проект, сюда ставится скриншот:
-           assets/img/project-01-cover.webp (16:10 на десктопе) -->
-      <div class="mock" role="img" aria-label="Демо-макет лендинга барбершопа: первый экран с кнопкой записи и список услуг">
-        <div class="mock-nav">
-          <span class="mock-logo"><b>✂</b> Барбершоп</span>
-          <span class="mock-badge">демо</span>
-          <span class="mock-links"><i></i><i></i><i></i></span>
-          <span class="mock-btn">Записаться</span>
-        </div>
-        <div class="mock-hero">
-          <div class="mock-text">
-            <span class="mock-kicker">Мужские стрижки и бритьё</span>
-            <span class="mock-h">Стрижка, борода и&nbsp;бритьё в&nbsp;центре города</span>
-            <span class="mock-p"><i></i><i></i></span>
-            <span class="mock-btn mock-btn-lg">Записаться онлайн</span>
-          </div>
-          <svg class="mock-art" viewBox="0 0 300 300" aria-hidden="true">
-            <circle cx="150" cy="150" r="140" fill="#2a1f19"/>
-            <rect x="128" y="40" width="44" height="200" rx="22" fill="#efe3cf"/>
-            <path d="M128 70l44-22v30l-44 22zM128 120l44-22v30l-44 22zM128 170l44-22v30l-44 22zM128 220l44-22v20a22 22 0 01-8 16l-36 18z" fill="#c8402f"/>
-            <rect x="118" y="28" width="64" height="18" rx="9" fill="#c8954a"/>
-            <rect x="118" y="234" width="64" height="18" rx="9" fill="#c8954a"/>
-          </svg>
-        </div>
-        <div class="mock-services">
-          <div class="mock-tile"><b>Стрижка</b><i></i></div>
-          <div class="mock-tile"><b>Борода</b><i></i></div>
-          <div class="mock-tile"><b>Стрижка + борода</b><i></i></div>
-        </div>
+    <figure class="title-view">
+      <svg class="dim dim-h" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true">
+        <path class="draw" d="M1 8v32M599 8v32M1 24h598"/>
+        <path class="arrow" d="M1 24l12-4v8zM599 24l-12-4v8z"/>
+      </svg>
+      <span class="dim-label dim-label-h gost">1440</span>
+      <div class="view-frame">
+        <img src="work/deviny.webp" width="1200" height="675" alt="Сайт фитнес-платформы Deviny на ноутбуке, планшете и телефоне">
       </div>
-    </div>
-    <div class="fly-caption">
-      <p><b>Демо-лендинг барбершопа.</b> Пример, а не работа для клиента.</p>
-      <a class="link-arrow" href="#demo">Смотреть проект <span aria-hidden="true">→</span></a>
-    </div>
+      <svg class="dim dim-leader" viewBox="0 0 70 60" aria-hidden="true">
+        <path class="draw" d="M8 2 L60 56"/>
+        <circle cx="8" cy="2" r="2.5"/>
+      </svg>
+      <span class="dim-label dim-label-leader gost">мобильная версия — 390</span>
+      <figcaption class="sr-only">Последняя работа: Deviny, сайт фитнес-платформы.</figcaption>
+    </figure>
   </div>
- </div>
+
+  <table class="stamp" aria-label="Основная надпись">
+    <tr>
+      <td class="stamp-k">Разраб.</td><td class="stamp-v">Сикачевский Т.</td>
+      <td class="stamp-main gost" rowspan="3">Альбом работ</td>
+      <td class="stamp-k">Лист</td><td class="stamp-k">Листов</td>
+    </tr>
+    <tr>
+      <td class="stamp-k">Рейтинг</td><td class="stamp-v gost">4,9 из 5</td>
+      <td class="stamp-v gost">1</td><td class="stamp-v gost">6</td>
+    </tr>
+    <tr>
+      <td class="stamp-k">Заказов</td><td class="stamp-v gost">65, вовремя 98%</td>
+      <td class="stamp-v" colspan="2">Работ: <span class="gost">39</span></td>
+    </tr>
+  </table>
 </section>
 
-<!-- 4. Раздел «Демо» -->
-<section class="section" id="demo" aria-labelledby="demo-title">
-  <div class="wrap demo-grid">
-    <div>
-      <h2 id="demo-title" class="h2">Что входит в демо-лендинг</h2>
-      <p class="lead">Так выглядит лендинг для барбершопа или салона. Блоки те же, что получит ваш бизнес, тексты и фото будут ваши.</p>
-    </div>
-    <div>
-      <ol class="demo-list">
-        <li><span><b>Первый экран</b>: что вы делаете, где находитесь и кнопка записи.</span></li>
-        <li><span><b>Услуги и цены</b>: список, который легко обновлять.</span></li>
-        <li><span><b>Мастера</b>: фото и короткая подпись к каждому.</span></li>
-        <li><span><b>Адрес и часы работы</b>: с картой и маршрутом.</span></li>
-        <li><span><b>Запись</b>: в Telegram, WhatsApp или по телефону.</span></li>
-      </ol>
-    </div>
-    <!-- Места под будущие картинки от нейросети: все 4:3, имена в assets/img/README.md -->
-    <div class="slots">
-      <figure class="slot" data-slot="assets/img/demo-01-chair.webp">
-        <svg viewBox="0 0 400 300" role="img" aria-label="Иллюстрация: кресло барбера у зеркала">
-          <rect width="400" height="300" fill="#bcdcee"/>
-          <rect x="230" y="40" width="120" height="170" rx="60" fill="#e4f1f9" stroke="#10212c" stroke-width="6"/>
-          <rect x="90" y="120" width="90" height="70" rx="14" fill="#10212c"/>
-          <rect x="76" y="186" width="130" height="24" rx="10" fill="#b0298f"/>
-          <rect x="132" y="210" width="16" height="50" fill="#10212c"/>
-          <rect x="96" y="256" width="88" height="12" rx="6" fill="#10212c"/>
-        </svg>
-      </figure>
-      <figure class="slot" data-slot="assets/img/demo-02-tools.webp">
-        <svg viewBox="0 0 400 300" role="img" aria-label="Иллюстрация: ножницы и расчёска">
-          <rect width="400" height="300" fill="#10212c"/>
-          <g transform="translate(110 110) rotate(30)" fill="none" stroke="#cbe4f2" stroke-width="10"><circle r="28"/><circle cy="82" r="28"/></g>
-          <path d="M150 140l170-60 6 14-160 72zM150 170l176 16-2 16-176-10z" fill="#cbe4f2"/>
-          <g fill="#e57ac6"><rect x="60" y="230" width="280" height="22" rx="8"/></g>
-          <g fill="#e57ac6"><rect x="74" y="250" width="6" height="26"/><rect x="94" y="250" width="6" height="26"/><rect x="114" y="250" width="6" height="26"/><rect x="134" y="250" width="6" height="26"/><rect x="154" y="250" width="6" height="26"/><rect x="174" y="250" width="6" height="26"/><rect x="194" y="250" width="6" height="26"/><rect x="214" y="250" width="6" height="26"/><rect x="234" y="250" width="6" height="26"/><rect x="254" y="250" width="6" height="26"/><rect x="274" y="250" width="6" height="26"/><rect x="294" y="250" width="6" height="26"/><rect x="314" y="250" width="6" height="26"/></g>
-        </svg>
-      </figure>
-      <figure class="slot" data-slot="assets/img/demo-03-phone.webp">
-        <svg viewBox="0 0 400 300" role="img" aria-label="Иллюстрация: запись с телефона">
-          <rect width="400" height="300" fill="#f1dce9"/>
-          <rect x="140" y="30" width="120" height="240" rx="20" fill="#10212c"/>
-          <rect x="152" y="54" width="96" height="60" rx="8" fill="#cbe4f2"/>
-          <rect x="152" y="124" width="70" height="8" rx="4" fill="#cbe4f2" opacity=".6"/>
-          <rect x="152" y="140" width="86" height="8" rx="4" fill="#cbe4f2" opacity=".6"/>
-          <rect x="152" y="222" width="96" height="26" rx="13" fill="#b0298f"/>
-        </svg>
-      </figure>
-    </div>
+<!-- ЛИСТ 2. Работы -->
+<section class="sheet" id="sheet-2" aria-labelledby="works-title">
+  <header class="sheet-head">
+    <h2 id="works-title" class="gost h2">Работы</h2>
+    <p class="sheet-note">Сайты, сервисы и дизайн для компаний из России, Азербайджана и Казахстана. Наведите на лист, чтобы пролистать страницу.</p>
+    <span class="sheet-no gost" aria-label="Лист 2">Лист 2</span>
+  </header>
+
+  <div class="cases">
+    <article class="case case-xl">
+      <div class="case-view" tabindex="0" aria-label="Deviny: пролистать страницу">
+        <img class="case-cover" src="work/deviny.webp" width="1200" height="675" alt="Сайт Deviny на трёх устройствах" loading="lazy">
+        <img class="case-page" src="work/deviny-page.webp" alt="Страница сайта Deviny целиком" loading="lazy">
+      </div>
+      <dl class="case-meta">
+        <div><dt>Лист</dt><dd class="gost">2.1</dd></div>
+        <div class="wide"><dt>Работа</dt><dd class="case-name gost">Deviny</dd></div>
+        <div class="wide"><dt>Что сделано</dt><dd>Сайт фитнес-платформы: тренировки, тренеры, приложение</dd></div>
+        <div><dt>Год</dt><dd class="gost">2026</dd></div>
+        <div><dt>Адрес</dt><dd class="gost">deviny.me</dd></div>
+      </dl>
+    </article>
+
+    <article class="case case-l">
+      <div class="case-view" tabindex="0" aria-label="Imperium Legal: пролистать страницу">
+        <img class="case-cover" src="work/imperium-legal.webp" width="1200" height="675" alt="Сайт юридической компании Imperium Legal" loading="lazy">
+        <img class="case-page" src="work/imperium-legal-page.webp" alt="Страница сайта Imperium Legal целиком" loading="lazy">
+      </div>
+      <dl class="case-meta">
+        <div><dt>Лист</dt><dd class="gost">2.2</dd></div>
+        <div class="wide"><dt>Работа</dt><dd class="case-name gost">Imperium Legal</dd></div>
+        <div class="wide"><dt>Что сделано</dt><dd>Дизайн и разработка сайта юридической компании</dd></div>
+        <div><dt>Год</dt><dd class="gost">2026</dd></div>
+        <div><dt>Адрес</dt><dd class="gost">imp-legal.com</dd></div>
+      </dl>
+    </article>
+
+    <article class="case case-m">
+      <div class="case-view" tabindex="0" aria-label="Lonburg Auto: пролистать страницу">
+        <img class="case-cover" src="work/lonburg-auto.webp" width="1200" height="675" alt="Сайт Lonburg Auto" loading="lazy">
+        <img class="case-page" src="work/lonburg-auto-page.webp" alt="Страница сайта Lonburg Auto целиком" loading="lazy">
+      </div>
+      <dl class="case-meta">
+        <div><dt>Лист</dt><dd class="gost">2.3</dd></div>
+        <div class="wide"><dt>Работа</dt><dd class="case-name gost">Lonburg Auto</dd></div>
+        <div class="wide"><dt>Что сделано</dt><dd>Сайт компании, которая привозит автомобили из Китая</dd></div>
+        <div><dt>Год</dt><dd class="gost">2026</dd></div>
+      </dl>
+    </article>
+
+    <article class="case case-m">
+      <div class="case-view" tabindex="0" aria-label="HighSquad: пролистать страницу">
+        <img class="case-cover" src="work/highsquad.webp" width="1200" height="675" alt="Дизайн сайта HighSquad" loading="lazy">
+        <img class="case-page" src="work/highsquad-page.webp" alt="Страница дизайна HighSquad целиком" loading="lazy">
+      </div>
+      <dl class="case-meta">
+        <div><dt>Лист</dt><dd class="gost">2.4</dd></div>
+        <div class="wide"><dt>Работа</dt><dd class="case-name gost">HighSquad</dd></div>
+        <div class="wide"><dt>Что сделано</dt><dd>Дизайн сервиса для игроков Dota 2 с калькулятором стоимости</dd></div>
+        <div><dt>Год</dt><dd class="gost">2026</dd></div>
+      </dl>
+    </article>
+
+    <article class="case case-l case-flip">
+      <div class="case-view" tabindex="0" aria-label="Vessel House: пролистать страницу">
+        <img class="case-cover" src="work/vessel-house.webp" width="1200" height="675" alt="Сайт Vessel House" loading="lazy">
+        <img class="case-page" src="work/vessel-house-page.webp" alt="Страница сайта Vessel House целиком" loading="lazy">
+      </div>
+      <dl class="case-meta">
+        <div><dt>Лист</dt><dd class="gost">2.5</dd></div>
+        <div class="wide"><dt>Работа</dt><dd class="case-name gost">Vessel House</dd></div>
+        <div class="wide"><dt>Что сделано</dt><dd>Сайт производителя модульных домов</dd></div>
+        <div><dt>Год</dt><dd class="gost">2026</dd></div>
+        <div><dt>Адрес</dt><dd class="gost">vesselhouse.kz</dd></div>
+      </dl>
+    </article>
+
+    <article class="case case-s">
+      <div class="case-view" tabindex="0" aria-label="Tesler Money: пролистать страницу">
+        <img class="case-cover" src="work/tesler-money.webp" width="1200" height="675" alt="Сайт Tesler Money" loading="lazy">
+        <img class="case-page" src="work/tesler-money-page.webp" alt="Страница сайта Tesler Money целиком" loading="lazy">
+      </div>
+      <dl class="case-meta">
+        <div><dt>Лист</dt><dd class="gost">2.6</dd></div>
+        <div class="wide"><dt>Работа</dt><dd class="case-name gost">Tesler Money</dd></div>
+        <div class="wide"><dt>Что сделано</dt><dd>Сайт сервиса интернет-банкинга</dd></div>
+        <div><dt>Год</dt><dd class="gost">2025</dd></div>
+      </dl>
+    </article>
+
+    <article class="case case-s">
+      <div class="case-view" tabindex="0" aria-label="«слой»: пролистать страницу">
+        <img class="case-cover" src="work/sloy.webp" width="1200" height="675" alt="Сайт графического дизайнера «слой»" loading="lazy">
+        <img class="case-page" src="work/sloy-page.webp" alt="Страница сайта «слой» целиком" loading="lazy">
+      </div>
+      <dl class="case-meta">
+        <div><dt>Лист</dt><dd class="gost">2.7</dd></div>
+        <div class="wide"><dt>Работа</dt><dd class="case-name gost">«слой»</dd></div>
+        <div class="wide"><dt>Что сделано</dt><dd>Сайт графического дизайнера</dd></div>
+        <div><dt>Год</dt><dd class="gost">2026</dd></div>
+      </dl>
+    </article>
+
+    <article class="case case-s">
+      <div class="case-view" tabindex="0" aria-label="Alebrio: пролистать страницу">
+        <img class="case-cover" src="work/alebrio.webp" width="1200" height="675" alt="Платформа Alebrio" loading="lazy">
+        <img class="case-page" src="work/alebrio-page.webp" alt="Страница платформы Alebrio целиком" loading="lazy">
+      </div>
+      <dl class="case-meta">
+        <div><dt>Лист</dt><dd class="gost">2.8</dd></div>
+        <div class="wide"><dt>Работа</dt><dd class="case-name gost">Alebrio</dd></div>
+        <div class="wide"><dt>Что сделано</dt><dd>Платформа для художников: профиль, добавление работ, конкурсы</dd></div>
+        <div><dt>Год</dt><dd class="gost">2026</dd></div>
+      </dl>
+    </article>
+  </div>
+
+  <h3 class="gost h3 index-title">Ведомость остальных работ</h3>
+  <ol class="index" role="list">
+    <li><img src="work/nikita-crm.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Nikita CRM</span><span>Сайт и CRM компании</span></li>
+    <li><img src="work/praesidium.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Praesidium</span><span>Дизайн и сайт, praesidiumofficial.com</span></li>
+    <li><img src="work/lucky-cars.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Lucky Cars</span><span>Выкуп авто в Москве</span></li>
+    <li><img src="work/datrix.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Datrix</span><span>Модульные дата-центры, datrixpro.az</span></li>
+    <li><img src="work/mcg.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">MCG</span><span>Строительная компания, mcg.az</span></li>
+    <li><img src="work/server-tech.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Server Tech</span><span>Серверное оборудование</span></li>
+    <li><img src="work/one-dome.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">One Dome</span><span>Сервис покупки жилья</span></li>
+    <li><img src="work/ram.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">RAM</span><span>Аренда строительной техники</span></li>
+    <li><img src="work/azal.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Azal</span><span>Сайт авиаперевозчика</span></li>
+    <li><img src="work/wowbox.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Wowbox</span><span>Интернет-магазин</span></li>
+    <li><img src="work/sibax.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Sibax Design</span><span>Сайт дизайн-студии</span></li>
+    <li><img src="work/proroll.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Proroll</span><span>Рольставни, proroll.kz</span></li>
+    <li><img src="work/sneg.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Профальпстрой</span><span>Уборка снега с кровли</span></li>
+    <li><img src="work/stoyanka.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Стоянка Покров</span><span>Стоянка для грузовиков</span></li>
+    <li><img src="work/flbot.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">FL Bot Pro</span><span>Сайт бота для фрилансеров</span></li>
+    <li><img src="work/remo-shop.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Remo Shop</span><span>Магазин с доставкой по РФ</span></li>
+    <li><img src="work/texno-senzur.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Texno Senzur</span><span>Сайт технической компании</span></li>
+    <li><img src="work/avs-photo.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">AVS Photo</span><span>Сайт фотографа</span></li>
+    <li><img src="work/digital-edge.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Digital Edge</span><span>Разработка сайтов, degit.tech</span></li>
+    <li><img src="work/family-tree.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Семейное древо</span><span>Семейный сайт с родословной</span></li>
+    <li><img src="work/streamline.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Streamline</span><span>Логистика, streamline.az</span></li>
+    <li><img src="work/immortal.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Immortal</span><span>Лендинг агентства</span></li>
+    <li><img src="work/poly-gost.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Полы по ГОСТу</span><span>Промышленные полы</span></li>
+    <li><img src="work/miltim-studio.webp" alt="" loading="lazy" width="1200" height="675"><span class="gost">Miltim Studio</span><span>Сайт моей студии</span></li>
+  </ol>
+</section>
+
+<!-- ЛИСТ 3. Услуги -->
+<section class="sheet" id="sheet-3" aria-labelledby="services-title">
+  <header class="sheet-head">
+    <h2 id="services-title" class="gost h2">Спецификация услуг</h2>
+    <p class="sheet-note">Цены предварительные. Точную сумму и срок называю после короткого брифа, оценка бесплатная.</p>
+    <span class="sheet-no gost">Лист 3</span>
+  </header>
+
+  <table class="spec">
+    <thead>
+      <tr><th scope="col">Поз.</th><th scope="col">Наименование</th><th scope="col">Что входит</th><th scope="col">Срок</th><th scope="col">Цена</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="gost">1</td><th scope="row" class="gost">Лендинг</th><td>Одна страница под услугу или рекламу: структура, дизайн, адаптив, форма заявки в Telegram или на почту</td><td class="gost">2–4 дня</td><td class="gost price" data-assumed>от $60</td></tr>
+      <tr><td class="gost">2</td><th scope="row" class="gost">Сайт под ключ</th><td>Многостраничный сайт, интернет-магазин или каталог: дизайн, вёрстка, админка, запуск на домене</td><td class="gost">5–10 дней</td><td class="gost price" data-assumed>от $150</td></tr>
+      <tr><td class="gost">3</td><th scope="row" class="gost">Веб-сервис</th><td>Личные кабинеты, админ-панели, онлайн-калькуляторы, CRM под ваши процессы</td><td class="gost">по ТЗ</td><td class="gost price">после брифа</td></tr>
+      <tr><td class="gost">4</td><th scope="row" class="gost">Мобильное приложение</th><td>Приложения для iOS и Android вместе с сервером и админкой</td><td class="gost">по ТЗ</td><td class="gost price">после брифа</td></tr>
+      <tr><td class="gost">5</td><th scope="row" class="gost">Дизайн в Figma</th><td>UI/UX-дизайн сайта или интерфейса с адаптивами. Можно заказать отдельно</td><td class="gost">по ТЗ</td><td class="gost price">после брифа</td></tr>
+      <tr><td class="gost">6</td><th scope="row" class="gost">Доработки</th><td>Ускорение сайта, формы в Telegram и на почту, правки готовых сайтов на Tilda и WordPress</td><td class="gost">от 1 дня</td><td class="gost price">после брифа</td></tr>
+      <tr class="spec-extra"><td class="gost">7</td><th scope="row" class="gost">Рилсы и видео</th><td>Короткие ролики для соцсетей: монтаж, субтитры, сцены с ИИ</td><td class="gost">1–2 дня</td><td class="gost price" data-assumed>от $25 / ролик</td></tr>
+      <tr class="spec-extra"><td class="gost">8</td><th scope="row" class="gost">Визуал</th><td>Баннеры, обложки, карточки товаров, изображения с ИИ</td><td class="gost">от 1 дня</td><td class="gost price" data-assumed>от $5 / макет</td></tr>
+    </tbody>
+  </table>
+
+  <p class="stack"><span class="stack-k">Инструменты:</span> HTML, CSS, JavaScript, React и Next.js, Vue, Node.js, Tilda, WordPress, Figma, iOS и Android.</p>
+</section>
+
+<!-- ЛИСТ 4. Отзывы -->
+<section class="sheet" id="sheet-4" aria-labelledby="reviews-title">
+  <header class="sheet-head">
+    <h2 id="reviews-title" class="gost h2">Заключения заказчиков</h2>
+    <p class="sheet-note">Отзывы с фриланс-биржи, где я выполнил 65 заказов. Приведены дословно, длинный отзыв сокращён.</p>
+    <span class="sheet-no gost">Лист 4</span>
+  </header>
+
+  <div class="reviews">
+    <figure class="review review-a">
+      <blockquote>
+        <p>Задача была — обновить устаревший сайт компании, как информационную часть, так и админ. панель пользователя. Дизайн был выполнен досрочно, быстро и качественно, на высоком профессиональном уровне… Очень понравилось, что ребята предлагали свои идеи, которые нам пришлись по душе. Все правки вносились практически на ходу, Тимур всегда был на связи.</p>
+      </blockquote>
+      <figcaption><span class="gost">LLC_Nikita_Online</span> · редизайн сайта и админ-панели</figcaption>
+    </figure>
+    <figure class="review review-b">
+      <blockquote>
+        <p>Никогда ранее не заказывал подобные услуги и не представлял, как должно происходить. Но та скорость и понимание вопроса меня впечатлили, однозначно советую.</p>
+      </blockquote>
+      <figcaption><span class="gost">bovart1979</span> · лендинг под ключ</figcaption>
+    </figure>
+
+    <table class="stamp stamp-stats" aria-label="Показатели на фриланс-бирже">
+      <tr><td class="stamp-k">Рейтинг</td><td class="stamp-v gost">4,9</td><td class="stamp-k">Отзывов</td><td class="stamp-v gost">51</td></tr>
+      <tr><td class="stamp-k">Сдано вовремя</td><td class="stamp-v gost">98%</td><td class="stamp-k">Повторных заказов</td><td class="stamp-v gost">58%</td></tr>
+    </table>
   </div>
 </section>
 
-<!-- 5. Процесс -->
-<section class="section surface" id="process" aria-labelledby="process-title">
-  <div class="wrap">
-    <h2 id="process-title" class="h2">Как проходит работа</h2>
-    <p class="lead">Пять шагов от первого сообщения до готового сайта.</p>
-    <ol class="steps">
-      <li><span class="step-top"><span class="step-n">1</span><svg class="step-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 12h6M10 16h6" stroke="#b0298f" stroke-width="2"/></svg></span><h3 class="h3">Бриф</h3><p>Короткие вопросы о бизнесе, услугах и том, что должно быть на сайте.</p></li>
-      <li><span class="step-top"><span class="step-n">2</span><svg class="step-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 010 17z" fill="#b0298f"/></svg></span><h3 class="h3">Предоплата 50%</h3><p>После брифа фиксируем цену и срок, вы вносите половину.</p></li>
-      <li><span class="step-top"><span class="step-n">3</span><svg class="step-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 9h18" stroke="currentColor" stroke-width="2"/><rect x="6" y="12" width="7" height="3" rx="1" fill="#b0298f"/></svg></span><h3 class="h3">Промежуточный результат</h3><p>Показываю первую версию, чтобы вы видели, куда движется работа.</p></li>
-      <li><span class="step-top"><span class="step-n">4</span><svg class="step-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1-5L16 4l4 4L9 19z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 6l4 4" stroke="#b0298f" stroke-width="2"/></svg></span><h3 class="h3">Правки</h3><p>2–3 круга правок уже входят в цену.</p></li>
-      <li><span class="step-top"><span class="step-n">5</span><svg class="step-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="#b0298f"/><path d="M8 12.5l3 3 5-6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3 class="h3">Оплата остатка</h3><p>Остальные 50% вы платите после того, как вы согласовали результат.</p></li>
-    </ol>
-  </div>
+<!-- ЛИСТ 5. Порядок работы -->
+<section class="sheet" id="sheet-5" aria-labelledby="process-title">
+  <header class="sheet-head">
+    <h2 id="process-title" class="gost h2">Ведомость этапов</h2>
+    <p class="sheet-note">Вы общаетесь напрямую со мной на каждом этапе. На крупных проектах подключаю свою команду.</p>
+    <span class="sheet-no gost">Лист 5</span>
+  </header>
+
+  <ol class="stages" role="list">
+    <li><span class="st-n gost">1</span><h3 class="gost">Бриф</h3><p>Пишете в двух-трёх предложениях, что нужно. Если есть пример или старый сайт, присылаете ссылку.</p></li>
+    <li><span class="st-n gost">2</span><h3 class="gost">Оценка</h3><p>Предлагаю решение без лишних функций, называю цену, срок и этапы.</p></li>
+    <li><span class="st-n gost">3</span><h3 class="gost">Предоплата 50%</h3><p>Фиксируем задание и начинаем работу.</p></li>
+    <li><span class="st-n gost">4</span><h3 class="gost">Дизайн и сборка</h3><p>Показываю промежуточный результат, чтобы вы видели, как идёт работа.</p></li>
+    <li><span class="st-n gost">5</span><h3 class="gost">Правки</h3><p>2–3 круга правок входят в цену.</p></li>
+    <li><span class="st-n gost">6</span><h3 class="gost">Запуск</h3><p>Запускаю проект, вы оплачиваете остаток после согласования.</p></li>
+  </ol>
 </section>
 
-<!-- 6. Контакты -->
-<section class="section dark" id="contact" aria-labelledby="contact-title">
-  <div class="wrap contact-grid">
+<!-- ЛИСТ 6. Контакты -->
+<section class="sheet sheet-close" id="sheet-6" aria-labelledby="contact-title">
+  <header class="sheet-head">
+    <h2 id="contact-title" class="gost h2 display-close">Обсудим ваш проект</h2>
+    <span class="sheet-no gost">Лист 6</span>
+  </header>
+  <div class="close-grid">
     <div>
-      <h2 id="contact-title" class="h2">Контакты для заказа</h2>
-      <p class="lead">Напишите, чем занимается ваш бизнес и что нужно: сайт, ролики или визуал. Отвечу и предложу план с ценой.</p>
-      <a class="btn btn-primary btn-lg" href="https://t.me/miltim7" target="_blank" rel="noopener">Обсудить проект</a>
+      <p class="lead">Опишите задачу в двух-трёх предложениях. Отвечу с вариантом решения и ценой.</p>
+      <a class="btn btn-red btn-lg" href="https://t.me/miltim7" target="_blank" rel="noopener">Обсудить проект</a>
     </div>
-    <div class="contact-side">
-    <div class="chat" role="img" aria-label="Пример первого сообщения в Telegram: вид бизнеса, город и что нужно сделать">
-      <div class="chat-head"><span class="chat-ava" aria-hidden="true">Т</span><span><b>Тимур</b><small>Telegram · @miltim7</small></span></div>
-      <p class="chat-label">Пример первого сообщения</p>
-      <p class="chat-msg">Здравствуйте! У меня барбершоп в Баку. Нужен лендинг с услугами, ценами и записью в WhatsApp.</p>
-    </div>
-    <ul class="contacts" role="list">
-      <li><span class="c-label">Telegram</span><a href="https://t.me/miltim7" target="_blank" rel="noopener">@miltim7</a></li>
-      <li><span class="c-label">Телефон</span><a href="tel:+994505529210">+994 50 552 92 10</a></li>
-      <li><span class="c-label">Почта</span><a href="mailto:timursailing70@gmail.com">timursailing70@gmail.com</a></li>
-    </ul>
-    </div>
+    <table class="stamp stamp-contacts" aria-label="Контакты">
+      <tr><td class="stamp-k">Telegram</td><td class="stamp-v"><a href="https://t.me/miltim7" target="_blank" rel="noopener">@miltim7</a></td></tr>
+      <tr><td class="stamp-k">Телефон</td><td class="stamp-v"><a href="tel:+994505529210">+994 50 552 92 10</a></td></tr>
+      <tr><td class="stamp-k">Почта</td><td class="stamp-v"><a href="mailto:timursailing70@gmail.com">timursailing70@gmail.com</a></td></tr>
+      <tr><td class="stamp-k">Где</td><td class="stamp-v">Азербайджан, работаю удалённо</td></tr>
+    </table>
   </div>
 </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-row">
-    <span>© 2026 Тимур. Сайты, рилсы и визуал для малого бизнеса.</span>
-  </div>
+<footer class="foot">
+  <span>© 2026 Тимур Сикачевский</span>
+  <span class="gost">Альбом работ · листов 6</span>
 </footer>
 
-<!-- GSAP 3.15.1 с jsdelivr, версия зафиксирована, проверка целостности (SRI) -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js" integrity="sha384-3vCAhD+a3BOliP3QqjQINn6ZWiZxoqu0WFxX5ZQZgqekDZuSb1mJBrrLMmu94H8f" crossorigin="anonymous" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js" integrity="sha384-H2WL1iy/jKQQ7MTHU2hskZKNHTYWWD/KgKE1vCNnaWY8An2ESTh23KN/fTp8XS3j" crossorigin="anonymous" defer></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>
